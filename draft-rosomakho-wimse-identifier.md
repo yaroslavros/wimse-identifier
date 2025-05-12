@@ -94,7 +94,7 @@ The identifier is designed to be stable and suitable for inclusion in digital cr
 
 ## URI Requirements
 
-A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3. of URI}}. The URI format allows different schemes (e.g., `spiffe`, `https`, or `urn`) depending on deployment requirements. Example identifiers:
+A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3 of URI}}. The URI format allows different schemes (e.g., `spiffe`, `https`, or `urn`) depending on deployment requirements. Example identifiers:
 
 ~~~
 spiffe://incubation.example.org/ns/experimental/analytics/ingest
@@ -129,7 +129,7 @@ Workload Identifiers are designed to be embedded in cryptographic credentials an
 
 ## X.509 Certificates
 
-Workload Identifier included in an X.509 are encoded in the subject alternative name extension as a URI using the uniformResourceIdentifier field, as defined in {{Section 4.2.1.6. of ?X509-PROFILE=RFC5280}}.
+Workload Identifier included in an X.509 are encoded in the subject alternative name extension as a URI using the uniformResourceIdentifier field, as defined in {{Section 4.2.1.6 of ?X509-PROFILE=RFC5280}}.
 
 For example,
 
@@ -143,7 +143,7 @@ Consumers MUST NOT attempt to interpret or derive workload identity from other c
 
 ## JSON Web Tokens (JWT)
 
-When a Workload Identifier is included in a JWT, it MUST appear in the "sub" (Subject) claim, as defined in {{Section 4.1.2. of JWT}}.
+When a Workload Identifier is included in a JWT, it MUST appear in the "sub" (Subject) claim, as defined in {{Section 4.1.2 of JWT}}.
 
 ## Interpretation by Consumers
 
