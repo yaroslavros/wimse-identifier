@@ -186,9 +186,9 @@ Table of Contents
 4.1.   URI Requirements
 
    A Workload Identifier MUST be an absolute URI, as defined in
-   Section 4.3. of [URI].  The URI format allows different schemes
-   (e.g., spiffe, https, or urn) depending on deployment requirements.
-   Example identifiers:
+   Section 4.3 of [URI].  The URI format allows different schemes (e.g.,
+   spiffe, https, or urn) depending on deployment requirements.  Example
+   identifiers:
 
 spiffe://incubation.example.org/ns/experimental/analytics/ingest
 https://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
@@ -236,7 +236,7 @@ urn:example:container:db-read-replica
 
    Workload Identifier included in an X.509 are encoded in the subject
    alternative name extension as a URI using the
-   uniformResourceIdentifier field, as defined in Section 4.2.1.6. of
+   uniformResourceIdentifier field, as defined in Section 4.2.1.6 of
    [X509-PROFILE].
 
    For example,
@@ -251,7 +251,7 @@ urn:example:container:db-read-replica
 5.2.  JSON Web Tokens (JWT)
 
    When a Workload Identifier is included in a JWT, it MUST appear in
-   the "sub" (Subject) claim, as defined in Section 4.1.2. of [JWT].
+   the "sub" (Subject) claim, as defined in Section 4.1.2 of [JWT].
 
 5.3.  Interpretation by Consumers
 

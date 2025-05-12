@@ -1308,7 +1308,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-uri-requirements">
 <a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-uri-requirements" class="section-name selfRef">URI Requirements</a>
         </h3>
-<p id="section-4.1-1">A Workload Identifier <span class="bcp14">MUST</span> be an absolute URI, as defined in <span><a href="https://rfc-editor.org/rfc/rfc3986#section-4.3." class="relref">Section 4.3.</a> of [<a href="#URI" class="cite xref">URI</a>]</span>. The URI format allows different schemes (e.g., <code>spiffe</code>, <code>https</code>, or <code>urn</code>) depending on deployment requirements. Example identifiers:<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-1">A Workload Identifier <span class="bcp14">MUST</span> be an absolute URI, as defined in <span><a href="https://rfc-editor.org/rfc/rfc3986#section-4.3" class="relref">Section 4.3</a> of [<a href="#URI" class="cite xref">URI</a>]</span>. The URI format allows different schemes (e.g., <code>spiffe</code>, <code>https</code>, or <code>urn</code>) depending on deployment requirements. Example identifiers:<a href="#section-4.1-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-4.1-2">
 <pre>
 spiffe://incubation.example.org/ns/experimental/analytics/ingest
@@ -1357,7 +1357,7 @@ spiffe://prod.example.com/ns/default/database/backend
         <h3 id="name-x509-certificates">
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-x509-certificates" class="section-name selfRef">X.509 Certificates</a>
         </h3>
-<p id="section-5.1-1">Workload Identifier included in an X.509 are encoded in the subject alternative name extension as a URI using the uniformResourceIdentifier field, as defined in <span><a href="https://rfc-editor.org/rfc/rfc5280#section-4.2.1.6." class="relref">Section 4.2.1.6.</a> of [<a href="#X509-PROFILE" class="cite xref">X509-PROFILE</a>]</span>.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+<p id="section-5.1-1">Workload Identifier included in an X.509 are encoded in the subject alternative name extension as a URI using the uniformResourceIdentifier field, as defined in <span><a href="https://rfc-editor.org/rfc/rfc5280#section-4.2.1.6" class="relref">Section 4.2.1.6</a> of [<a href="#X509-PROFILE" class="cite xref">X509-PROFILE</a>]</span>.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 <p id="section-5.1-2">For example,<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-5.1-3">
 <pre>
@@ -1374,7 +1374,7 @@ X509v3 extensions:
         <h3 id="name-json-web-tokens-jwt">
 <a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-json-web-tokens-jwt" class="section-name selfRef">JSON Web Tokens (JWT)</a>
         </h3>
-<p id="section-5.2-1">When a Workload Identifier is included in a JWT, it <span class="bcp14">MUST</span> appear in the "sub" (Subject) claim, as defined in <span><a href="https://rfc-editor.org/rfc/rfc7519#section-4.1.2." class="relref">Section 4.1.2.</a> of [<a href="#JWT" class="cite xref">JWT</a>]</span>.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+<p id="section-5.2-1">When a Workload Identifier is included in a JWT, it <span class="bcp14">MUST</span> appear in the "sub" (Subject) claim, as defined in <span><a href="https://rfc-editor.org/rfc/rfc7519#section-4.1.2" class="relref">Section 4.1.2</a> of [<a href="#JWT" class="cite xref">JWT</a>]</span>.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="interpretation-by-consumers">
