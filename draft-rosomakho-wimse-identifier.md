@@ -9,17 +9,17 @@ number:
 date:
 consensus: true
 v: 3
-area: "Applications and Real-Time"
+area: ""
 workgroup: "Workload Identity in Multi System Environments"
 keyword:
  - workload
  - identifier
 venue:
   group: "Workload Identity in Multi System Environments"
-  type: Working Group
-  mail: wimse@ietf.org
+  type: ""
+  mail: "wimse@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/wimse/"
-  github: yaroslavros/wimse-identifier
+  github: "yaroslavros/wimse-identifier"
   latest: "https://yaroslavros.github.io/wimse-identifier/draft-rosomakho-wimse-identifier.html"
 
 author:
