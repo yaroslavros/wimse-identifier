@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-27T01:23:41.603086+00:00",
+  "timestamp": "2025-05-29T01:24:57.649833+00:00",
   "repo": "yaroslavros/wimse-identifier",
   "labels": [
     {
@@ -49,6 +49,71 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOOowVDc64pduh",
+      "title": "URI Format",
+      "url": "https://github.com/yaroslavros/wimse-identifier/issues/1",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "the definition seems to be a little bit different than what is in the architecture spec.  For example, its not clear to me that the urn format is compatible: urn:example:container:db-read-replica.  This URN does not have a trust domain.  I think this will cause problems when defining how to use an identity.  IF the trust domain is not included then how does the consumer know what the trust domain is? \n\n\n\n",
+      "createdAt": "2025-05-28T16:09:10Z",
+      "updatedAt": "2025-05-28T16:09:10Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOOowVDc64pf-v",
+      "title": "Usage in Credentials",
+      "url": "https://github.com/yaroslavros/wimse-identifier/issues/2",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The format of the credentials is discussed in the s2s spec.  My initial thoughts are that the definition of how the identifier fits in a credential should remain there as it talks about how the identifier is used in that credential.",
+      "createdAt": "2025-05-28T16:13:01Z",
+      "updatedAt": "2025-05-28T16:13:01Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOOowVDc64pnqD",
+      "title": "Path Portion of URI",
+      "url": "https://github.com/yaroslavros/wimse-identifier/issues/3",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "It might be worth saying that the path portion of the URI is not specified in this document and is outside the scope of this specification.  Without specific deployment knowledge the consumer of the identity can only identify the trust domain.   ",
+      "createdAt": "2025-05-28T16:24:59Z",
+      "updatedAt": "2025-05-28T16:24:59Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOOowVDc64pqtM",
+      "title": "Scope and uniquness",
+      "url": "https://github.com/yaroslavros/wimse-identifier/issues/4",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "What a workload is is somewhat ambiguous.  For example a workload could refer just to the software that is being run (Auto-parts-orderer) or it can refer to software being run in some environment (Auto-Parts-sorter/us-arizona) or it can even refer to a specific instance of running code (/23a5s7sd-efjf39400f-wefjj49).  All of these scopes within which they are unique.  ",
+      "createdAt": "2025-05-28T16:30:41Z",
+      "updatedAt": "2025-05-28T16:30:41Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": []
 }
