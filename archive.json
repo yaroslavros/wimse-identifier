@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-15T01:43:13.064359+00:00",
+  "timestamp": "2025-06-17T01:26:55.222837+00:00",
   "repo": "yaroslavros/wimse-identifier",
   "labels": [
     {
@@ -115,5 +115,92 @@
       "comments": []
     }
   ],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 5,
+      "id": "PR_kwDOOowVDc6anzIT",
+      "title": "modified consumer definition",
+      "url": "https://github.com/yaroslavros/wimse-identifier/pull/5",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Added uses to list of things a consumer may do since a consumer may just use the identity after it is validated. ",
+      "createdAt": "2025-06-16T00:01:08Z",
+      "updatedAt": "2025-06-16T00:01:08Z",
+      "baseRepository": "yaroslavros/wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "8390e6fa093b3bc900706b3a61787c09ebbec9c6",
+      "headRepository": "jsalowey/wimse-identifier",
+      "headRefName": "terminology",
+      "headRefOid": "d8d655be2c3524f14cc84f1e599f712713ea44b8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOOowVDc6an8rz",
+      "title": "updated workload URI and trust domain",
+      "url": "https://github.com/yaroslavros/wimse-identifier/pull/6",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Currently we say that a workload must have a trust domain, so I removed the URN without the trust domain, I moved some more of the text over from the arch document.  I'm not sure about using HTTP and a workload identity example. It seems like that might not be the best example as it conflates host name and trust domain.  \r\n\r\nThis closes issue #1 ",
+      "createdAt": "2025-06-16T00:46:54Z",
+      "updatedAt": "2025-06-16T00:46:54Z",
+      "baseRepository": "yaroslavros/wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "8390e6fa093b3bc900706b3a61787c09ebbec9c6",
+      "headRepository": "jsalowey/wimse-identifier",
+      "headRefName": "URI-req",
+      "headRefOid": "d26cf46dff0d2c2fcbd0ceabb05b35a2f5fece0c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOOowVDc6aoFqz",
+      "title": "added section on scheme specific part",
+      "url": "https://github.com/yaroslavros/wimse-identifier/pull/7",
+      "state": "OPEN",
+      "author": "jsalowey",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "This section discusses some options for the scheme specific part. ",
+      "createdAt": "2025-06-16T01:28:11Z",
+      "updatedAt": "2025-06-16T01:29:22Z",
+      "baseRepository": "yaroslavros/wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "8390e6fa093b3bc900706b3a61787c09ebbec9c6",
+      "headRepository": "jsalowey/wimse-identifier",
+      "headRefName": "unique",
+      "headRefOid": "139ef4ff93c8fe7d24deeb1458a21820aca29494",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "jsalowey",
+          "authorAssociation": "NONE",
+          "body": "Addresses issues #4 and #3 ",
+          "createdAt": "2025-06-16T01:29:22Z",
+          "updatedAt": "2025-06-16T01:29:22Z"
+        }
+      ],
+      "reviews": []
+    }
+  ]
 }
