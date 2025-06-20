@@ -4,8 +4,8 @@
 
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
-Intended status: Standards Track                             12 May 2025
-Expires: 13 November 2025
+Intended status: Standards Track                            20 June 2025
+Expires: 22 December 2025
 
 
                           Workload Identifier
@@ -56,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 November 2025.
+   This Internet-Draft will expire on 22 December 2025.
 
 Copyright Notice
 
@@ -166,7 +166,7 @@ Table of Contents
    Issuer:  An entity responsible for assigning and validating Workload
       Identifiers.
 
-   Consumer:  An entity that evaluates or verifies a Workload
+   Consumer:  An entity that evaluates, verifies or uses a Workload
       Identifier, typically as part of authentication or authorisation
       decisions.  This includes relying parties, verifiers, and policy
       enforcement points.
