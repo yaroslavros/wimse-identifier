@@ -84,7 +84,7 @@ Issuer:
 
 Consumer:
 
-: An entity that evaluates or verifies a Workload Identifier, typically as part of authentication or authorisation decisions. This includes relying parties, verifiers, and policy enforcement points.
+: An entity that evaluates, verifies or uses a Workload Identifier, typically as part of authentication or authorisation decisions. This includes relying parties, verifiers, and policy enforcement points.
 
 # Workload Identifier Specification
 
