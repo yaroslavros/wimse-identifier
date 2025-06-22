@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-17T01:26:55.222837+00:00",
+  "timestamp": "2025-06-22T01:42:32.636659+00:00",
   "repo": "yaroslavros/wimse-identifier",
   "labels": [
     {
@@ -121,24 +121,26 @@
       "id": "PR_kwDOOowVDc6anzIT",
       "title": "modified consumer definition",
       "url": "https://github.com/yaroslavros/wimse-identifier/pull/5",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "jsalowey",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Added uses to list of things a consumer may do since a consumer may just use the identity after it is validated. ",
       "createdAt": "2025-06-16T00:01:08Z",
-      "updatedAt": "2025-06-16T00:01:08Z",
+      "updatedAt": "2025-06-20T16:16:54Z",
       "baseRepository": "yaroslavros/wimse-identifier",
       "baseRefName": "main",
       "baseRefOid": "8390e6fa093b3bc900706b3a61787c09ebbec9c6",
       "headRepository": "jsalowey/wimse-identifier",
       "headRefName": "terminology",
       "headRefOid": "d8d655be2c3524f14cc84f1e599f712713ea44b8",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-06-20T16:16:54Z",
+      "mergedAt": "2025-06-20T16:16:54Z",
+      "mergedBy": "yaroslavros",
+      "mergeCommit": {
+        "oid": "584d8c806ce51b83df60311563c017977d8ff38a"
+      },
       "comments": [],
       "reviews": []
     },
