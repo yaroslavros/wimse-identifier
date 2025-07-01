@@ -160,8 +160,6 @@ spiffe://dev.example.com/ns/default/database/backend
 spiffe://prod.example.com/ns/default/database/backend
 ~~~
 
-
-
 # Usage in Credentials and Tokens
 
 Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorisation, and auditing. This section describes how such identifiers may be represented in commonly used formats.
