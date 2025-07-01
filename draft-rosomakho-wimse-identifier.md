@@ -107,28 +107,6 @@ https://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 urn:example:container:db-read-replica
 ~~~
 
-## Trust Domain Association
-
-The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.
-
-Workload Identifiers are interpreted in the context of the trust domain that issued the credential. Identifiers with identical path components but different trust domains represent different workloads.
-
-Issuers within a trust domain MUST ensure uniqueness of all Workload Identifiers they assign.
-
-## Stability and Uniqueness
-
-Workload Identifiers are intended to be stable over time. An identifier assigned to a specific workload should not be reassigned to a different workload unless explicitly intended by the policies of the trust domain.
-
-Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.
-
-
-For example, the following contains identifiers of two distinct globally unique Workload Identifiers
-
-~~~
-spiffe://dev.example.com/ns/default/database/backend
-spiffe://prod.example.com/ns/default/database/backend
-~~~
-
 ## Scheme Specific Portion
 
 The format and semantics scheme specific part of the URI that follows the identity is determined by the issuer in the trust domain. What the identity refers to is also determined by the issuer. For example a workload identity may refer to a specific instance of a running piece of software or it may refer just to a specific software version running in a particular environment, or it may refer to the role that the software performs within the system.  The scheme specific part of the URI may just be an opaque unique identifier used to look up the additional identity information in another system. Some examples of these concepts are given below:
@@ -160,6 +138,29 @@ spiffe://prod.trust.domaain/foo-servce#@sha256:
 ~~~
 
 Other concepts may be defined within the trust domain depending on what is important in the system and what information is available when the identity is issued. A trust domain should define the scheme specific portion of the URI to meet their auditing and authorization needs.
+
+## Trust Domain Association
+
+The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.
+
+Workload Identifiers are interpreted in the context of the trust domain that issued the credential. Identifiers with identical path components but different trust domains represent different workloads.
+
+Issuers within a trust domain MUST ensure uniqueness of all Workload Identifiers they assign.
+
+## Stability and Uniqueness
+
+Workload Identifiers are intended to be stable over time. An identifier assigned to a specific workload should not be reassigned to a different workload unless explicitly intended by the policies of the trust domain.
+
+Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.
+
+For example, the following contains identifiers of two distinct globally unique Workload Identifiers
+
+~~~
+spiffe://dev.example.com/ns/default/database/backend
+spiffe://prod.example.com/ns/default/database/backend
+~~~
+
+
 
 # Usage in Credentials and Tokens
 
