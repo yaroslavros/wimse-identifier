@@ -6,6 +6,7 @@
 <meta content="initial-scale=1.0" name="viewport">
 <title>Workload Identifier</title>
 <meta content="Yaroslav Rosomakho" name="author">
+<meta content="Joe Salowey" name="author">
 <meta content="
        This document defines a canonical identifier for workloads, referred to as the Workload Identifier. A Workload Identifier is a URI that uniquely identifies a workload within the context of a specific trust domain. This identifier can be embedded in digital credentials, including X.509 certificates and security tokens, to support authentication, authorization, and policy enforcement across diverse systems. The Workload Identifier format ensures interoperability, facilitates secure identity federation, and enables consistent identity semantics. 
     " name="description">
@@ -1045,11 +1046,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Workload Identifier</td>
-<td class="right">June 2025</td>
+<td class="right">July 2025</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Rosomakho</td>
-<td class="center">Expires 22 December 2025</td>
+<td class="left">Rosomakho &amp; Salowey</td>
+<td class="center">Expires 2 January 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1062,17 +1063,21 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-rosomakho-wimse-identifier-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-06-20" class="published">20 June 2025</time>
+<time datetime="2025-07-01" class="published">1 July 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-12-22">22 December 2025</time></dd>
-<dt class="label-authors">Author:</dt>
+<dd class="expires"><time datetime="2026-01-02">2 January 2026</time></dd>
+<dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
       <div class="author-name">Y. Rosomakho</div>
 <div class="org">Zscaler</div>
+</div>
+<div class="author">
+      <div class="author-name">J. Salowey</div>
+<div class="org">CyberArk</div>
 </div>
 </dd>
 </dl>
@@ -1117,7 +1122,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 22 December 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 2 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1162,10 +1167,13 @@ svg :is([fill="white"], [fill^="#fff"]) {
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-uri-requirements" class="internal xref">URI Requirements</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
-                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-trust-domain-association" class="internal xref">Trust Domain Association</a></p>
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-scheme-specific-portion" class="internal xref">Scheme Specific Portion</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
-                <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-stability-and-uniqueness" class="internal xref">Stability and Uniqueness</a></p>
+                <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-trust-domain-association" class="internal xref">Trust Domain Association</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
+                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-stability-and-uniqueness" class="internal xref">Stability and Uniqueness</a></p>
 </li>
             </ul>
 </li>
@@ -1221,7 +1229,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.9.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1318,29 +1326,80 @@ urn:example:container:db-read-replica
 </div>
 </section>
 </div>
-<div id="trust-domain-association">
+<div id="scheme-specific-portion">
 <section id="section-4.2">
-        <h3 id="name-trust-domain-association">
-<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-trust-domain-association" class="section-name selfRef">Trust Domain Association</a>
+        <h3 id="name-scheme-specific-portion">
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-scheme-specific-portion" class="section-name selfRef">Scheme Specific Portion</a>
         </h3>
-<p id="section-4.2-1">The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
-<p id="section-4.2-2">Workload Identifiers are interpreted in the context of the trust domain that issued the credential. Identifiers with identical path components but different trust domains represent different workloads.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
-<p id="section-4.2-3">Issuers within a trust domain <span class="bcp14">MUST</span> ensure uniqueness of all Workload Identifiers they assign.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+<p id="section-4.2-1">The format and semantics scheme specific part of the URI that follows the identity is determined by the issuer in the trust domain. What the identity refers to is also determined by the issuer. For example a workload identity may refer to a specific instance of a running piece of software or it may refer just to a specific software version running in a particular environment, or it may refer to the role that the software performs within the system.  The scheme specific part of the URI may just be an opaque unique identifier used to look up the additional identity information in another system. Some examples of these concepts are given below:<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4.2-2.1">
+            <p id="section-4.2-2.1.1">Opaque identifier<a href="#section-4.2-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<div class="alignLeft art-text artwork" id="section-4.2-3">
+<pre>
+spiffe://prod.trust.domain/89a6ec51-f877-44c0-9501-b213597f2d1d
+</pre><a href="#section-4.2-3" class="pilcrow">¶</a>
+</div>
+<ul class="normal">
+<li class="normal" id="section-4.2-4.1">
+            <p id="section-4.2-4.1.1">Application role<a href="#section-4.2-4.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<div class="alignLeft art-text artwork" id="section-4.2-5">
+<pre>
+spiffe://prod.trust.domain/ns/prod-01/sa/foo-service
+</pre><a href="#section-4.2-5" class="pilcrow">¶</a>
+</div>
+<ul class="normal">
+<li class="normal" id="section-4.2-6.1">
+            <p id="section-4.2-6.1.1">Specific instance of application role<a href="#section-4.2-6.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<div class="alignLeft art-text artwork" id="section-4.2-7">
+<pre>
+spiffe://prod.trust.domain/ns/prod-01/sa/foo-service/iid-
+      1f814646-87b5-4e26-bb55-1d13caccdd8d
+</pre><a href="#section-4.2-7" class="pilcrow">¶</a>
+</div>
+<ul class="normal">
+<li class="normal" id="section-4.2-8.1">
+            <p id="section-4.2-8.1.1">Specific code for an application role<a href="#section-4.2-8.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<div class="alignLeft art-text artwork" id="section-4.2-9">
+<pre>
+spiffe://prod.trust.domaain/foo-servce#@sha256:
+      c4dbb1a06030e142cb0ed4be61421967618289a19c0c7760bdd745ac67779ca7
+</pre><a href="#section-4.2-9" class="pilcrow">¶</a>
+</div>
+<p id="section-4.2-10">Other concepts may be defined within the trust domain depending on what is important in the system and what information is available when the identity is issued. A trust domain should define the scheme specific portion of the URI to meet their auditing and authorization needs.<a href="#section-4.2-10" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="trust-domain-association">
+<section id="section-4.3">
+        <h3 id="name-trust-domain-association">
+<a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-trust-domain-association" class="section-name selfRef">Trust Domain Association</a>
+        </h3>
+<p id="section-4.3-1">The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.3-2">Workload Identifiers are interpreted in the context of the trust domain that issued the credential. Identifiers with identical path components but different trust domains represent different workloads.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
+<p id="section-4.3-3">Issuers within a trust domain <span class="bcp14">MUST</span> ensure uniqueness of all Workload Identifiers they assign.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="stability-and-uniqueness">
-<section id="section-4.3">
+<section id="section-4.4">
         <h3 id="name-stability-and-uniqueness">
-<a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-stability-and-uniqueness" class="section-name selfRef">Stability and Uniqueness</a>
+<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-stability-and-uniqueness" class="section-name selfRef">Stability and Uniqueness</a>
         </h3>
-<p id="section-4.3-1">Workload Identifiers are intended to be stable over time. An identifier assigned to a specific workload should not be reassigned to a different workload unless explicitly intended by the policies of the trust domain.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
-<p id="section-4.3-2">Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
-<p id="section-4.3-3">For example, the following contains identifiers of two distinct globally unique Workload Identifiers<a href="#section-4.3-3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-4.3-4">
+<p id="section-4.4-1">Workload Identifiers are intended to be stable over time. An identifier assigned to a specific workload should not be reassigned to a different workload unless explicitly intended by the policies of the trust domain.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<p id="section-4.4-2">Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.<a href="#section-4.4-2" class="pilcrow">¶</a></p>
+<p id="section-4.4-3">For example, the following contains identifiers of two distinct globally unique Workload Identifiers<a href="#section-4.4-3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-4.4-4">
 <pre>
 spiffe://dev.example.com/ns/default/database/backend
 spiffe://prod.example.com/ns/default/database/backend
-</pre><a href="#section-4.3-4" class="pilcrow">¶</a>
+</pre><a href="#section-4.4-4" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
@@ -1507,8 +1566,8 @@ X509v3 extensions:
 </div>
 <div id="authors-addresses">
 <section id="appendix-B">
-      <h2 id="name-authors-address">
-<a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Yaroslav Rosomakho</span></div>
@@ -1516,6 +1575,14 @@ X509v3 extensions:
 <div class="email">
 <span>Email:</span>
 <a href="mailto:yaroslavros@gmail.com" class="email">yaroslavros@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Joe Salowey</span></div>
+<div dir="auto" class="left"><span class="org">CyberArk</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:joe@salowey.net" class="email">joe@salowey.net</a>
 </div>
 </address>
 </section>
