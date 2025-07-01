@@ -28,6 +28,11 @@ author:
     name: Yaroslav Rosomakho
     organization: Zscaler
     email: yaroslavros@gmail.com
+ -
+    ins: J. Salowey
+    name: Joe Salowey
+    organization: CyberArk
+    email: joe@salowey.net
 
 normative:
 
@@ -101,6 +106,38 @@ spiffe://incubation.example.org/ns/experimental/analytics/ingest
 https://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 urn:example:container:db-read-replica
 ~~~
+
+## Scheme Specific Portion
+
+The format and semantics scheme specific part of the URI that follows the identity is determined by the issuer in the trust domain. What the identity refers to is also determined by the issuer. For example a workload identity may refer to a specific instance of a running piece of software or it may refer just to a specific software version running in a particular environment, or it may refer to the role that the software performs within the system.  The scheme specific part of the URI may just be an opaque unique identifier used to look up the additional identity information in another system. Some examples of these concepts are given below:
+
+* Opaque identifier
+
+~~~
+spiffe://prod.trust.domain/89a6ec51-f877-44c0-9501-b213597f2d1d
+~~~
+
+* Application role
+
+~~~
+spiffe://prod.trust.domain/ns/prod-01/sa/foo-service
+~~~
+
+* Specific instance of application role
+
+~~~
+spiffe://prod.trust.domain/ns/prod-01/sa/foo-service/iid-
+      1f814646-87b5-4e26-bb55-1d13caccdd8d
+~~~
+
+* Specific code for an application role
+
+~~~
+spiffe://prod.trust.domaain/foo-servce#@sha256:
+      c4dbb1a06030e142cb0ed4be61421967618289a19c0c7760bdd745ac67779ca7
+~~~
+
+Other concepts may be defined within the trust domain depending on what is important in the system and what information is available when the identity is issued. A trust domain should define the scheme specific portion of the URI to meet their auditing and authorization needs.
 
 ## Trust Domain Association
 
