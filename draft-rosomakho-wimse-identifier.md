@@ -28,6 +28,11 @@ author:
     name: Yaroslav Rosomakho
     organization: Zscaler
     email: yaroslavros@gmail.com
+ -
+    ins: J. Salowey
+    name: Joe Salowey
+    organization: CyberArk
+    email: joe@salowey.net
 
 normative:
 
