@@ -99,13 +99,14 @@ The identifier is designed to be stable and suitable for inclusion in digital cr
 
 ## URI Requirements
 
-A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3 of URI}}. The URI format allows different schemes (e.g., `spiffe`, `https`, or `urn`) depending on deployment requirements. Example identifiers:
+A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3 of URI}}. In addition the URI MUST include an authority that identifies the trust domain within which the identifier is scoped. The scheme and scheme specific part are not defined by this specification. The URI format allows different schemes (e.g., `spiffe` [[SPIFFE]](https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md), `wimse`) depending on deployment requirements.  Example identifiers:
 
 ~~~
 spiffe://incubation.example.org/ns/experimental/analytics/ingest
-https://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
-urn:example:container:db-read-replica
+wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 ~~~
+
+(Note that the wimse scheme is used as an example and is not defined in this document).
 
 ## Scheme Specific Portion
 
@@ -141,7 +142,7 @@ Other concepts may be defined within the trust domain depending on what is impor
 
 ## Trust Domain Association
 
-The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.
+The authority component of the URI defines the trust domain which is responsible for issuing, validating, and managing Workload Identifiers within its scope.  The trust domain SHOULD be a fully qualified domain name belonging to the organization defining the trust domain to help provide uniqueness for the trust domain identifier. While IP addresses are allowed as host names in the URI encoding rules, they MUST NOT be used to represent trust domains except in the case where they are needed for compatibility with legacy naming schemes.
 
 Workload Identifiers are interpreted in the context of the trust domain that issued the credential. Identifiers with identical path components but different trust domains represent different workloads.
 
