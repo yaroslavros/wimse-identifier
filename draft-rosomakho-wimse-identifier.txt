@@ -192,9 +192,8 @@ Table of Contents
    that identifies the trust domain within which the identifier is
    scoped.  The scheme and scheme specific part are not defined by this
    specification.  The URI format allows different schemes (e.g., spiffe
-   [SPIFFE] (https://github.com/spiffe/spiffe/blob/main/standards/
-   SPIFFE-ID.md), wimse) depending on deployment requirements.  Example
-   identifiers:
+   as defined in [SPIFFE-ID], wimse) depending on deployment
+   requirements.  Example identifiers:
 
 spiffe://incubation.example.org/ns/experimental/analytics/ingest
 wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
@@ -408,6 +407,12 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
               (JWT)", RFC 7519, DOI 10.17487/RFC7519, May 2015,
               <https://www.rfc-editor.org/rfc/rfc7519>.
 
+   [SPIFFE-ID]
+              "The SPIFFE Identity and Verifiable Identity Document",
+              January 2025,
+              <https://github.com/spiffe/spiffe/blob/main/standards/
+              SPIFFE-ID.md>.
+
    [X509-PROFILE]
               Cooper, D., Santesson, S., Farrell, S., Boeyen, S.,
               Housley, R., and W. Polk, "Internet X.509 Public Key
@@ -417,7 +422,8 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 
 Acknowledgments
 
-   TODO acknowledge.
+   Authors would like to thank Evan Gilman for his review of the initial
+   text of this document and his guidance.
 
 Authors' Addresses
 
