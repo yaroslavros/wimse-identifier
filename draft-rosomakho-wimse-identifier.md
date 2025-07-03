@@ -37,6 +37,10 @@ author:
 normative:
 
 informative:
+  SPIFFE-ID:
+    title: "The SPIFFE Identity and Verifiable Identity Document"
+    target: https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md
+    date: January 2025
 
 
 --- abstract
@@ -99,7 +103,7 @@ The identifier is designed to be stable and suitable for inclusion in digital cr
 
 ## URI Requirements
 
-A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3 of URI}}. In addition the URI MUST include an authority that identifies the trust domain within which the identifier is scoped. The scheme and scheme specific part are not defined by this specification. The URI format allows different schemes (e.g., `spiffe` [[SPIFFE]](https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md), `wimse`) depending on deployment requirements.  Example identifiers:
+A Workload Identifier MUST be an absolute URI, as defined in {{Section 4.3 of URI}}. In addition the URI MUST include an authority that identifies the trust domain within which the identifier is scoped. The scheme and scheme specific part are not defined by this specification. The URI format allows different schemes (e.g., `spiffe` as defined in {{SPIFFE-ID}}, `wimse`) depending on deployment requirements.  Example identifiers:
 
 ~~~
 spiffe://incubation.example.org/ns/experimental/analytics/ingest
@@ -231,4 +235,4 @@ This document has no IANA actions.
 # Acknowledgments
 {:numbered="false"}
 
-TODO acknowledge.
+Authors would like to thank Evan Gilman for his review of the initial text of this document and his guidance.
