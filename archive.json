@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-06T01:43:01.515669+00:00",
+  "timestamp": "2025-08-03T01:51:02.220555+00:00",
   "repo": "yaroslavros/wimse-identifier",
   "labels": [
     {
@@ -190,9 +190,17 @@
       "labels": [],
       "body": "The document (possibly in Sec. 4.4) should be more explicit about what the identifier denotes. For example, if I have a service running in 2 regions with 4 instances in each one, would I have 1 identifier for all of them (I think yes).\n\n",
       "createdAt": "2025-07-04T12:08:51Z",
-      "updatedAt": "2025-07-04T12:08:51Z",
+      "updatedAt": "2025-07-31T13:36:55Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaronf",
+          "authorAssociation": "NONE",
+          "body": "One more on uniqueness. This paragraph is simply incorrect:\n> Workload Identifiers are globally unique when the trust domain is globally unique. This is typically achieved by using a fully qualified domain name (FQDN) under organisational control.\n\nAn FQDN is used only for trust domains, if the whole Identifier is to be unique, the path portion needs to be managed for uniqueness by the organization.\n\nAlso, I'm not quite sure the IETF does UK English spelling...",
+          "createdAt": "2025-07-31T13:36:55Z",
+          "updatedAt": "2025-07-31T13:36:55Z"
+        }
+      ]
     },
     {
       "number": 13,
