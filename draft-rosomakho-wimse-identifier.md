@@ -167,31 +167,8 @@ spiffe://prod.example.com/ns/default/database/backend
 
 # Usage in Credentials and Tokens
 
-Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorisation, and auditing. This section describes how such identifiers may be represented in commonly used formats.
-
-## X.509 Certificates
-
-Workload Identifier included in an X.509 are encoded in the subject alternative name extension as a URI using the uniformResourceIdentifier field, as defined in {{Section 4.2.1.6 of ?X509-PROFILE=RFC5280}}.
-
-For example,
-
-~~~
-X509v3 extensions:
-    X509v3 Subject Alternative Name:
-        URI:spiffe://example.org/ns/default/analytics/ingest
-~~~
-
-Consumers MUST NOT attempt to interpret or derive workload identity from other certificate fields such as the Common Name.
-
-## JSON Web Tokens (JWT)
-
-When a Workload Identifier is included in a JWT, it MUST appear in the "sub" (Subject) claim, as defined in {{Section 4.1.2 of JWT}}.
-
-## Interpretation by Consumers
-
-Consumers of credentials and tokens MUST validate that the Workload Identifier is consistent with the expected trust domain and issuing authority. Consumers SHOULD NOT make assumptions about internal structure or semantics of the identifier beyond the URI format defined in this specification.
-
-For authorisation decisions, consumers may map Workload Identifiers to policies or roles. However, such mappings are out of scope for this specification.
+Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorization, and auditing. Detailed usage is described in
+{{?S2S-PROTOCOL=I-D.ietf-wimse-s2s-protocol}}.
 
 # Security Considerations
 
