@@ -1179,17 +1179,6 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-usage-in-credentials-and-to" class="internal xref">Usage in Credentials and Tokens</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-x509-certificates" class="internal xref">X.509 Certificates</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
-                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-json-web-tokens-jwt" class="internal xref">JSON Web Tokens (JWT)</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
-                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-interpretation-by-consumers" class="internal xref">Interpretation by Consumers</a></p>
-</li>
-            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
@@ -1412,40 +1401,6 @@ spiffe://prod.example.com/ns/default/database/backend
       </h2>
 <p id="section-5-1">Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorization, and auditing. Detailed usage is described in
 <span>[<a href="#S2S-PROTOCOL" class="cite xref">S2S-PROTOCOL</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
-<div id="x509-certificates">
-<section id="section-5.1">
-        <h3 id="name-x509-certificates">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-x509-certificates" class="section-name selfRef">X.509 Certificates</a>
-        </h3>
-<p id="section-5.1-1">Workload Identifier included in an X.509 are encoded in the subject alternative name extension as a URI using the uniformResourceIdentifier field, as defined in <span><a href="https://rfc-editor.org/rfc/rfc5280#section-4.2.1.6" class="relref">Section 4.2.1.6</a> of [<a href="#X509-PROFILE" class="cite xref">X509-PROFILE</a>]</span>.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">For example,<a href="#section-5.1-2" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-5.1-3">
-<pre>
-X509v3 extensions:
-    X509v3 Subject Alternative Name:
-        URI:spiffe://example.org/ns/default/analytics/ingest
-</pre><a href="#section-5.1-3" class="pilcrow">¶</a>
-</div>
-<p id="section-5.1-4">Consumers <span class="bcp14">MUST NOT</span> attempt to interpret or derive workload identity from other certificate fields such as the Common Name.<a href="#section-5.1-4" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="json-web-tokens-jwt">
-<section id="section-5.2">
-        <h3 id="name-json-web-tokens-jwt">
-<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-json-web-tokens-jwt" class="section-name selfRef">JSON Web Tokens (JWT)</a>
-        </h3>
-<p id="section-5.2-1">When a Workload Identifier is included in a JWT, it <span class="bcp14">MUST</span> appear in the "sub" (Subject) claim, as defined in <span><a href="https://rfc-editor.org/rfc/rfc7519#section-4.1.2" class="relref">Section 4.1.2</a> of [<a href="#JWT" class="cite xref">JWT</a>]</span>.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="interpretation-by-consumers">
-<section id="section-5.3">
-        <h3 id="name-interpretation-by-consumers">
-<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-interpretation-by-consumers" class="section-name selfRef">Interpretation by Consumers</a>
-        </h3>
-<p id="section-5.3-1">Consumers of credentials and tokens <span class="bcp14">MUST</span> validate that the Workload Identifier is consistent with the expected trust domain and issuing authority. Consumers <span class="bcp14">SHOULD NOT</span> make assumptions about internal structure or semantics of the identifier beyond the URI format defined in this specification.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
-<p id="section-5.3-2">For authorisation decisions, consumers may map Workload Identifiers to policies or roles. However, such mappings are out of scope for this specification.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
-</section>
-</div>
 </section>
 </div>
 <div id="security-considerations">
@@ -1553,12 +1508,8 @@ X509v3 extensions:
 <span class="refAuthor">Campbell, B.</span>, <span class="refAuthor">Salowey, J. A.</span>, <span class="refAuthor">Schwenkschuster, A.</span>, and <span class="refAuthor">Y. Sheffer</span>, <span class="refTitle">"WIMSE Workload to Workload Authentication"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-wimse-s2s-protocol-06</span>, <time datetime="2025-07-04" class="refDate">4 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-s2s-protocol-06">https://datatracker.ietf.org/doc/html/draft-ietf-wimse-s2s-protocol-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="SPIFFE-ID">[SPIFFE-ID]</dt>
-        <dd>
-<span class="refTitle">"The SPIFFE Identity and Verifiable Identity Document"</span>, <time datetime="2025-01" class="refDate">January 2025</time>, <span>&lt;<a href="https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md">https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="X509-PROFILE">[X509-PROFILE]</dt>
       <dd>
-<span class="refAuthor">Cooper, D.</span>, <span class="refAuthor">Santesson, S.</span>, <span class="refAuthor">Farrell, S.</span>, <span class="refAuthor">Boeyen, S.</span>, <span class="refAuthor">Housley, R.</span>, and <span class="refAuthor">W. Polk</span>, <span class="refTitle">"Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile"</span>, <span class="seriesInfo">RFC 5280</span>, <span class="seriesInfo">DOI 10.17487/RFC5280</span>, <time datetime="2008-05" class="refDate">May 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5280">https://www.rfc-editor.org/rfc/rfc5280</a>&gt;</span>. </dd>
+<span class="refTitle">"The SPIFFE Identity and Verifiable Identity Document"</span>, <time datetime="2025-01" class="refDate">January 2025</time>, <span>&lt;<a href="https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md">https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
