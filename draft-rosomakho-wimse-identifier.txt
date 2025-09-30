@@ -5,8 +5,8 @@
 Workload Identity in Multi System Environments              Y. Rosomakho
 Internet-Draft                                                   Zscaler
 Intended status: Standards Track                              J. Salowey
-Expires: 4 January 2026                                         CyberArk
-                                                             3 July 2025
+Expires: 3 April 2026                                           CyberArk
+                                                       30 September 2025
 
 
                           Workload Identifier
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 January 2026.
+   This Internet-Draft will expire on 3 April 2026.
 
 Copyright Notice
 
@@ -84,9 +84,6 @@ Table of Contents
      4.3.  Trust Domain Association
      4.4.  Stability and Uniqueness
    5.  Usage in Credentials and Tokens
-     5.1.   X.509 Certificates
-     5.2.  JSON Web Tokens (JWT)
-     5.3.  Interpretation by Consumers
    6.  Security Considerations
      6.1.  Identifier Authenticity
      6.2.  Trust Domain Validation
@@ -278,42 +275,8 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
 
    Workload Identifiers are designed to be embedded in cryptographic
    credentials and security tokens that are used to assert the identity
-   of workloads during authentication, authorisation, and auditing.
-   This section describes how such identifiers may be represented in
-   commonly used formats.
-
-5.1.   X.509 Certificates
-
-   Workload Identifier included in an X.509 are encoded in the subject
-   alternative name extension as a URI using the
-   uniformResourceIdentifier field, as defined in Section 4.2.1.6 of
-   [X509-PROFILE].
-
-   For example,
-
-   X509v3 extensions:
-       X509v3 Subject Alternative Name:
-           URI:spiffe://example.org/ns/default/analytics/ingest
-
-   Consumers MUST NOT attempt to interpret or derive workload identity
-   from other certificate fields such as the Common Name.
-
-5.2.  JSON Web Tokens (JWT)
-
-   When a Workload Identifier is included in a JWT, it MUST appear in
-   the "sub" (Subject) claim, as defined in Section 4.1.2 of [JWT].
-
-5.3.  Interpretation by Consumers
-
-   Consumers of credentials and tokens MUST validate that the Workload
-   Identifier is consistent with the expected trust domain and issuing
-   authority.  Consumers SHOULD NOT make assumptions about internal
-   structure or semantics of the identifier beyond the URI format
-   defined in this specification.
-
-   For authorisation decisions, consumers may map Workload Identifiers
-   to policies or roles.  However, such mappings are out of scope for
-   this specification.
+   of workloads during authentication, authorization, and auditing.
+   Detailed usage is described in [S2S-PROTOCOL].
 
 6.  Security Considerations
 
@@ -399,26 +362,27 @@ wimse://trust.corp.example.com/workload/af3e86cb-7013-4e33-b717-11c4edd25679
    [ARCH]     Salowey, J. A., Rosomakho, Y., and H. Tschofenig,
               "Workload Identity in a Multi System Environment (WIMSE)
               Architecture", Work in Progress, Internet-Draft, draft-
-              ietf-wimse-arch-04, 2 March 2025,
+              ietf-wimse-arch-05, 7 July 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
-              arch-04>.
+              arch-05>.
 
    [JWT]      Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
               (JWT)", RFC 7519, DOI 10.17487/RFC7519, May 2015,
               <https://www.rfc-editor.org/rfc/rfc7519>.
+
+   [S2S-PROTOCOL]
+              Campbell, B., Salowey, J. A., Schwenkschuster, A., and Y.
+              Sheffer, "WIMSE Workload to Workload Authentication", Work
+              in Progress, Internet-Draft, draft-ietf-wimse-s2s-
+              protocol-06, 4 July 2025,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-wimse-
+              s2s-protocol-06>.
 
    [SPIFFE-ID]
               "The SPIFFE Identity and Verifiable Identity Document",
               January 2025,
               <https://github.com/spiffe/spiffe/blob/main/standards/
               SPIFFE-ID.md>.
-
-   [X509-PROFILE]
-              Cooper, D., Santesson, S., Farrell, S., Boeyen, S.,
-              Housley, R., and W. Polk, "Internet X.509 Public Key
-              Infrastructure Certificate and Certificate Revocation List
-              (CRL) Profile", RFC 5280, DOI 10.17487/RFC5280, May 2008,
-              <https://www.rfc-editor.org/rfc/rfc5280>.
 
 Acknowledgments
 

@@ -10,22 +10,22 @@
 <meta content="
        This document defines a canonical identifier for workloads, referred to as the Workload Identifier. A Workload Identifier is a URI that uniquely identifies a workload within the context of a specific trust domain. This identifier can be embedded in digital credentials, including X.509 certificates and security tokens, to support authentication, authorization, and policy enforcement across diverse systems. The Workload Identifier format ensures interoperability, facilitates secure identity federation, and enables consistent identity semantics. 
     " name="description">
-<meta content="xml2rfc 3.29.0" name="generator">
+<meta content="xml2rfc 3.30.2" name="generator">
 <meta content="workload" name="keyword">
 <meta content="identifier" name="keyword">
 <meta content="draft-rosomakho-wimse-identifier-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.29.0
+  xml2rfc 3.30.2
     Python 3.12.11
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.1
-    platformdirs 4.3.8
+    platformdirs 4.4.0
     pycountry 24.6.1
     PyYAML 6.0.2
-    requests 2.32.4
+    requests 2.32.5
     setuptools 80.9.0
     wcwidth 0.2.13
 -->
@@ -1046,11 +1046,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Workload Identifier</td>
-<td class="right">July 2025</td>
+<td class="right">September 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Rosomakho &amp; Salowey</td>
-<td class="center">Expires 4 January 2026</td>
+<td class="center">Expires 3 April 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1063,12 +1063,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-rosomakho-wimse-identifier-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-07-03" class="published">3 July 2025</time>
+<time datetime="2025-09-30" class="published">30 September 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-01-04">4 January 2026</time></dd>
+<dd class="expires"><time datetime="2026-04-03">3 April 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1122,7 +1122,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 4 January 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 3 April 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1179,17 +1179,6 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-usage-in-credentials-and-to" class="internal xref">Usage in Credentials and Tokens</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-x509-certificates" class="internal xref">X.509 Certificates</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
-                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-json-web-tokens-jwt" class="internal xref">JSON Web Tokens (JWT)</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
-                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-interpretation-by-consumers" class="internal xref">Interpretation by Consumers</a></p>
-</li>
-            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
@@ -1410,41 +1399,8 @@ spiffe://prod.example.com/ns/default/database/backend
       <h2 id="name-usage-in-credentials-and-to">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-usage-in-credentials-and-to" class="section-name selfRef">Usage in Credentials and Tokens</a>
       </h2>
-<p id="section-5-1">Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorisation, and auditing. This section describes how such identifiers may be represented in commonly used formats.<a href="#section-5-1" class="pilcrow">¶</a></p>
-<div id="x509-certificates">
-<section id="section-5.1">
-        <h3 id="name-x509-certificates">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-x509-certificates" class="section-name selfRef">X.509 Certificates</a>
-        </h3>
-<p id="section-5.1-1">Workload Identifier included in an X.509 are encoded in the subject alternative name extension as a URI using the uniformResourceIdentifier field, as defined in <span><a href="https://rfc-editor.org/rfc/rfc5280#section-4.2.1.6" class="relref">Section 4.2.1.6</a> of [<a href="#X509-PROFILE" class="cite xref">X509-PROFILE</a>]</span>.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">For example,<a href="#section-5.1-2" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-5.1-3">
-<pre>
-X509v3 extensions:
-    X509v3 Subject Alternative Name:
-        URI:spiffe://example.org/ns/default/analytics/ingest
-</pre><a href="#section-5.1-3" class="pilcrow">¶</a>
-</div>
-<p id="section-5.1-4">Consumers <span class="bcp14">MUST NOT</span> attempt to interpret or derive workload identity from other certificate fields such as the Common Name.<a href="#section-5.1-4" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="json-web-tokens-jwt">
-<section id="section-5.2">
-        <h3 id="name-json-web-tokens-jwt">
-<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-json-web-tokens-jwt" class="section-name selfRef">JSON Web Tokens (JWT)</a>
-        </h3>
-<p id="section-5.2-1">When a Workload Identifier is included in a JWT, it <span class="bcp14">MUST</span> appear in the "sub" (Subject) claim, as defined in <span><a href="https://rfc-editor.org/rfc/rfc7519#section-4.1.2" class="relref">Section 4.1.2</a> of [<a href="#JWT" class="cite xref">JWT</a>]</span>.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="interpretation-by-consumers">
-<section id="section-5.3">
-        <h3 id="name-interpretation-by-consumers">
-<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-interpretation-by-consumers" class="section-name selfRef">Interpretation by Consumers</a>
-        </h3>
-<p id="section-5.3-1">Consumers of credentials and tokens <span class="bcp14">MUST</span> validate that the Workload Identifier is consistent with the expected trust domain and issuing authority. Consumers <span class="bcp14">SHOULD NOT</span> make assumptions about internal structure or semantics of the identifier beyond the URI format defined in this specification.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
-<p id="section-5.3-2">For authorisation decisions, consumers may map Workload Identifiers to policies or roles. However, such mappings are out of scope for this specification.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
-</section>
-</div>
+<p id="section-5-1">Workload Identifiers are designed to be embedded in cryptographic credentials and security tokens that are used to assert the identity of workloads during authentication, authorization, and auditing. Detailed usage is described in
+<span>[<a href="#S2S-PROTOCOL" class="cite xref">S2S-PROTOCOL</a>]</span>.<a href="#section-5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="security-considerations">
@@ -1541,19 +1497,19 @@ X509v3 extensions:
 <dl class="references">
 <dt id="ARCH">[ARCH]</dt>
         <dd>
-<span class="refAuthor">Salowey, J. A.</span>, <span class="refAuthor">Rosomakho, Y.</span>, and <span class="refAuthor">H. Tschofenig</span>, <span class="refTitle">"Workload Identity in a Multi System Environment (WIMSE) Architecture"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-wimse-arch-04</span>, <time datetime="2025-03-02" class="refDate">2 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-arch-04">https://datatracker.ietf.org/doc/html/draft-ietf-wimse-arch-04</a>&gt;</span>. </dd>
+<span class="refAuthor">Salowey, J. A.</span>, <span class="refAuthor">Rosomakho, Y.</span>, and <span class="refAuthor">H. Tschofenig</span>, <span class="refTitle">"Workload Identity in a Multi System Environment (WIMSE) Architecture"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-wimse-arch-05</span>, <time datetime="2025-07-07" class="refDate">7 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-arch-05">https://datatracker.ietf.org/doc/html/draft-ietf-wimse-arch-05</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="JWT">[JWT]</dt>
         <dd>
 <span class="refAuthor">Jones, M.</span>, <span class="refAuthor">Bradley, J.</span>, and <span class="refAuthor">N. Sakimura</span>, <span class="refTitle">"JSON Web Token (JWT)"</span>, <span class="seriesInfo">RFC 7519</span>, <span class="seriesInfo">DOI 10.17487/RFC7519</span>, <time datetime="2015-05" class="refDate">May 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7519">https://www.rfc-editor.org/rfc/rfc7519</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="SPIFFE-ID">[SPIFFE-ID]</dt>
+<dt id="S2S-PROTOCOL">[S2S-PROTOCOL]</dt>
         <dd>
-<span class="refTitle">"The SPIFFE Identity and Verifiable Identity Document"</span>, <time datetime="2025-01" class="refDate">January 2025</time>, <span>&lt;<a href="https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md">https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md</a>&gt;</span>. </dd>
+<span class="refAuthor">Campbell, B.</span>, <span class="refAuthor">Salowey, J. A.</span>, <span class="refAuthor">Schwenkschuster, A.</span>, and <span class="refAuthor">Y. Sheffer</span>, <span class="refTitle">"WIMSE Workload to Workload Authentication"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-wimse-s2s-protocol-06</span>, <time datetime="2025-07-04" class="refDate">4 July 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-wimse-s2s-protocol-06">https://datatracker.ietf.org/doc/html/draft-ietf-wimse-s2s-protocol-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="X509-PROFILE">[X509-PROFILE]</dt>
+<dt id="SPIFFE-ID">[SPIFFE-ID]</dt>
       <dd>
-<span class="refAuthor">Cooper, D.</span>, <span class="refAuthor">Santesson, S.</span>, <span class="refAuthor">Farrell, S.</span>, <span class="refAuthor">Boeyen, S.</span>, <span class="refAuthor">Housley, R.</span>, and <span class="refAuthor">W. Polk</span>, <span class="refTitle">"Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile"</span>, <span class="seriesInfo">RFC 5280</span>, <span class="seriesInfo">DOI 10.17487/RFC5280</span>, <time datetime="2008-05" class="refDate">May 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5280">https://www.rfc-editor.org/rfc/rfc5280</a>&gt;</span>. </dd>
+<span class="refTitle">"The SPIFFE Identity and Verifiable Identity Document"</span>, <time datetime="2025-01" class="refDate">January 2025</time>, <span>&lt;<a href="https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md">https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
