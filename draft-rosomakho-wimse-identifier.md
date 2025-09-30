@@ -138,7 +138,7 @@ spiffe://prod.trust.domain/ns/prod-01/sa/foo-service/iid-
 * Specific code for an application role
 
 ~~~
-spiffe://prod.trust.domaain/foo-servce#@sha256:
+spiffe://prod.trust.domaain/foo-service#@sha256:
       c4dbb1a06030e142cb0ed4be61421967618289a19c0c7760bdd745ac67779ca7
 ~~~
 
