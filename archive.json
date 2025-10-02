@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-08-03T01:51:02.220555+00:00",
+  "timestamp": "2025-10-02T01:16:57.741510+00:00",
   "repo": "yaroslavros/wimse-identifier",
   "labels": [
     {
@@ -244,11 +244,26 @@
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
-      "body": "This is an ongoing discussion, and IMO someone needs to make the just and define a \"wimse\" scheme. Why not here? See also [this issue](https://github.com/ietf-wg-wimse/draft-ietf-wimse-s2s-protocol/issues/123).\n\n",
+      "body": "This is an ongoing discussion, and IMO someone needs to make the jump and define a \"wimse\" scheme. Why not here? See also [this issue](https://github.com/ietf-wg-wimse/draft-ietf-wimse-s2s-protocol/issues/123).\n\n",
       "createdAt": "2025-07-04T12:08:56Z",
-      "updatedAt": "2025-07-04T12:08:56Z",
+      "updatedAt": "2025-10-01T08:35:38Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "OWNER",
+          "body": "Perhaps a good topic for upcoming interim!\n\n@jsalowey , what do you think?",
+          "createdAt": "2025-09-30T12:16:36Z",
+          "updatedAt": "2025-09-30T12:16:36Z"
+        },
+        {
+          "author": "yaronf",
+          "authorAssociation": "NONE",
+          "body": "In the meantime we defined it in S2S, and the WG seems to be happy with it (IIRC we brought it up in Madrid). Still possible to move it to this document once it gets adopted.",
+          "createdAt": "2025-10-01T08:35:38Z",
+          "updatedAt": "2025-10-01T08:35:38Z"
+        }
+      ]
     },
     {
       "number": 16,
@@ -262,9 +277,17 @@
       "labels": [],
       "body": "Does it ever make sense for the WL identifier to refer to a specific version? That  would make it nearly unusable for defining authorization policies.\n\n",
       "createdAt": "2025-07-04T12:08:57Z",
-      "updatedAt": "2025-07-04T12:08:57Z",
+      "updatedAt": "2025-09-30T12:16:00Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "OWNER",
+          "body": "I don't think workload identifier schemes should have generic versions in them. This feels messy. Also I don't see any examples of that in https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml \n\n\nIf one is redefining their path hierarchy they could add version information inside the path which is quite common in REST API.",
+          "createdAt": "2025-09-30T12:16:00Z",
+          "updatedAt": "2025-09-30T12:16:00Z"
+        }
+      ]
     },
     {
       "number": 17,
@@ -278,9 +301,17 @@
       "labels": [],
       "body": "Typo: foo-servce\n\n",
       "createdAt": "2025-07-04T12:08:58Z",
-      "updatedAt": "2025-07-04T12:08:58Z",
+      "updatedAt": "2025-09-30T12:12:21Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "OWNER",
+          "body": "https://github.com/yaroslavros/wimse-identifier/pull/21",
+          "createdAt": "2025-09-30T12:12:21Z",
+          "updatedAt": "2025-09-30T12:12:21Z"
+        }
+      ]
     },
     {
       "number": 18,
@@ -294,9 +325,24 @@
       "labels": [],
       "body": "Arguably this is out of scope for this document, and should be defined by the relevant protocols.\n\n",
       "createdAt": "2025-07-04T12:09:00Z",
-      "updatedAt": "2025-07-04T12:09:00Z",
+      "updatedAt": "2025-10-01T08:30:55Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "OWNER",
+          "body": "Addressed in https://github.com/yaroslavros/wimse-identifier/pull/20",
+          "createdAt": "2025-09-30T12:08:00Z",
+          "updatedAt": "2025-09-30T12:08:17Z"
+        },
+        {
+          "author": "yaronf",
+          "authorAssociation": "NONE",
+          "body": "LGTM. Thanks!",
+          "createdAt": "2025-10-01T08:30:55Z",
+          "updatedAt": "2025-10-01T08:30:55Z"
+        }
+      ]
     },
     {
       "number": 19,
@@ -310,7 +356,31 @@
       "labels": [],
       "body": "The identifier is also usable in the `aud` claim. Also we might end up using [Subject Identifiers](https://datatracker.ietf.org/doc/rfc9493/). Again, this whole usage section IMO should not belong in this document.\n\n",
       "createdAt": "2025-07-04T12:09:01Z",
-      "updatedAt": "2025-07-04T12:09:01Z",
+      "updatedAt": "2025-09-30T12:09:05Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "yaroslavros",
+          "authorAssociation": "OWNER",
+          "body": "Addressed in https://github.com/yaroslavros/wimse-identifier/pull/20",
+          "createdAt": "2025-09-30T12:09:05Z",
+          "updatedAt": "2025-09-30T12:09:05Z"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "id": "I_kwDOOowVDc7O0EqE",
+      "title": "Which SPIFFE requirements should we take?",
+      "url": "https://github.com/yaroslavros/wimse-identifier/issues/22",
+      "state": "OPEN",
+      "author": "yaroslavros",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "[SPIFFE-ID](https://github.com/spiffe/spiffe/blob/main/standards/SPIFFE-ID.md) has the following restrictions:\n\n- host MUST NOT be empty\n- userinfo and port MUST be empty\n- host MUST be lowercase\n- host MUST contain only [a-z0-9.-_], path may contain uppercase A-Z on top of that\n- host and path MUST not contain percent-encoded characters\n- path MUST NOT include trailing /\n- path MUST not include relative modifiers\n- URI length up to 2048 MUST be supported and SHOULD not exceed that limit\n\nObviously, we are not going to relax SPIFFE specific requirements, but we don't have to inherit exact same limitations which could be too limiting for other schemes. For example, allowing IPv4 addresses in host portion, but not IPv6 seems wrong.\n\nI would propose to:\n\n- let schemes define their own path restriction\n- inherit URI length requirement and recommendation\n- add host MUST NOT be empty and userinfo and port MUST be empty\n- relax requirements to host compared to SPIFFE - allow any valid non-empty hostname\n\nAnd add security considerations about percent-encoding and equivalency matching of URIs.\n\n@jsalowey what do you think? Should we bring this up at the architecture interim?",
+      "createdAt": "2025-09-30T14:22:30Z",
+      "updatedAt": "2025-09-30T14:22:30Z",
       "closedAt": null,
       "comments": []
     }
@@ -406,6 +476,58 @@
           "updatedAt": "2025-06-16T01:29:22Z"
         }
       ],
+      "reviews": []
+    },
+    {
+      "number": 20,
+      "id": "PR_kwDOOowVDc6rUdZL",
+      "title": "Refer to s2s-protocol for Usage in Credentials and Tokens",
+      "url": "https://github.com/yaroslavros/wimse-identifier/pull/20",
+      "state": "OPEN",
+      "author": "yaroslavros",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-30T12:07:30Z",
+      "updatedAt": "2025-09-30T12:08:29Z",
+      "baseRepository": "yaroslavros/wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "0e56b9c4837cf78aff68cb1e1c85a61a3a982e6f",
+      "headRepository": "yaroslavros/wimse-identifier",
+      "headRefName": "refer-s2s",
+      "headRefOid": "c8cb30b6cffb8cbdac68c7a469e5cab32b10e8e6",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 21,
+      "id": "PR_kwDOOowVDc6rUhLr",
+      "title": "Fixed typo in sample URI",
+      "url": "https://github.com/yaroslavros/wimse-identifier/pull/21",
+      "state": "OPEN",
+      "author": "yaroslavros",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-30T12:12:05Z",
+      "updatedAt": "2025-09-30T12:12:05Z",
+      "baseRepository": "yaroslavros/wimse-identifier",
+      "baseRefName": "main",
+      "baseRefOid": "0e56b9c4837cf78aff68cb1e1c85a61a3a982e6f",
+      "headRepository": "yaroslavros/wimse-identifier",
+      "headRefName": "typo",
+      "headRefOid": "1bb94f196e7725e1bdac1cac8c5060803238a596",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
       "reviews": []
     }
   ]
